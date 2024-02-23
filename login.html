@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+
+    <div class="p-0 d-flex middler">
+        <div class=" mx-auto d-flex">
+ 
+            <form class=" is-invalid align-self-center">
+                <div class="display-1 text-center mb-5"><a class="text-decoration-none text-dark" href="Welcome.html">LOGO</a></div>
+                <div class="mb-3">
+                    <label for="mail" class="form-label ms-1">Email</label>
+                    <input type="email" class="form-control is-invalid" id="mail" placeholder="Email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="passw" class="form-label ms-1">Password</label>
+                    <input type="password" class="form-control is-invalid" id="passw" placeholder="Password" required>
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="validationCheck" >
+                    <label class="form-check-label" for="validationCheck">Remember me</label>
+                </div>
+
+                <div class="d-flex ">
+                    <p class="small mx-auto m-0">Don't have an Account? </p><a class="small ms-3 text-decoration-none" href="Signin.html">Sign Up!</a>
+                </div>
+
+                <button class="btn btn-dark mt-4 w-100" type="submit">Log In</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="">
+        <div  id="moving-div"></div>
+    </div>
+
+    <script>
+window.onload = function() {
+    var div = document.getElementById("moving-div");
+    setInterval(function() {
+        var maxX = window.innerWidth - div.offsetWidth;
+        var maxY = window.innerHeight - div.offsetHeight;
+        var newX = Math.floor(Math.random() * maxX);
+        var newY = Math.floor(Math.random() * maxY);
+        var newColor = getRandomColor(); 
+        div.style.top = newY + "px";
+        div.style.left = newX + "px";
+        div.style.backgroundColor = newColor; 
+    }, 2000); 
+};
+
+function getRandomColor() {
+
+    var interpolationValue = Math.random();
+    
+
+    var red = Math.round(255 * interpolationValue);
+    var green = Math.round(255 * (1 - interpolationValue));
+    var blue = 0;
+    
+
+    var newColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+    
+    return newColor;
+}
+    </script>
+
+</body>
+</html>

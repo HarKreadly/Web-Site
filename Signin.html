@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+
+    <div class="p-0 d-flex middler">
+        <div class=" mx-auto d-flex">
+ 
+            <form class="mx-4 is-invalid align-self-center small">
+                <div class="display-1 text-center mb-5"><a class="text-decoration-none text-dark" href="Welcome.html">LOGO</a></div>
+                
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="name" class="form-label ms-1 m">First Name</label>
+                        <input type="text" class="form-control is-invalid" id="name" placeholder="First Name" required>
+                    </div>
+                    <div class="col">
+                        <label for="lastname" class="form-label ms-1">Last Name</label>
+                        <input type="text" class="form-control is-invalid" id="lastname" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <!-- <div class="row mb-3">
+                    <div class="col-2">
+                        <div class="form-check p-0 m-0">
+                            <label class="form-check-label" for="">Gender</label>
+                        </div>
+                    </div>
+                    <div class="col justify-content-evenly d-flex">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="Male" value="Male">
+                            <label class="form-check-label" for="Male">Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="Female" value="Female">
+                            <label class="form-check-label" for="Female">Female</label>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="mb-3">
+                    <label for="mail" class="form-label ms-1">Email</label>
+                    <input type="email" class="form-control is-invalid" id="mail" placeholder="Email" required>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="passw" class="form-label ms-1">Password</label>
+                        <input type="password" class="form-control is-invalid" id="passw" placeholder="Password" required>
+                    </div>
+                    <div class="col">
+                        <label for="conf_passw" class="form-label ms-1">Confirm Password</label>
+                        <input type="password" class="form-control is-invalid" id="conf_passw" placeholder="Password" required>
+                    </div>
+                </div>
+
+                <div class="mb-3 mx-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="validationCheck" >
+                    <label class="form-check-label" for="validationCheck">Stay signed in.</label>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <p class="small mx-2">You have an Account? </p><a class="small mx-3 text-decoration-none text-center" href="login.html">Log In</a>
+                </div>
+
+                <button class="btn btn-dark mt-1 w-100" type="submit">Register</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="">
+        <div  id="moving-div"></div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var div = document.getElementById("moving-div");
+            setInterval(function() {
+                var maxX = window.innerWidth - div.offsetWidth;
+                var maxY = window.innerHeight - div.offsetHeight;
+                var newX = Math.floor(Math.random() * maxX);
+                var newY = Math.floor(Math.random() * maxY);
+                var newColor = getRandomColor(); 
+                div.style.top = newY + "px";
+                div.style.left = newX + "px";
+                div.style.backgroundColor = newColor; 
+            }, 2000); 
+        };
+
+        function getRandomColor() {
+
+            var interpolationValue = Math.random();
+            
+
+            var red = Math.round(255 * interpolationValue);
+            var green = Math.round(255 * (1 - interpolationValue));
+            var blue = 0;
+            
+
+            var newColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+            
+            return newColor;
+        }
+    </script>
+</body>
+</html>
